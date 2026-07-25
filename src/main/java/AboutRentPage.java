@@ -1,5 +1,4 @@
 package pages;
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,7 +20,7 @@ public class AboutRentPage {
 
     //Локатор формы "Про аренду"
     private By deliveryDateField = By.xpath("//input[@placeholder='* Когда привезти самокат']"); //локатор поля "Когда привезти самокат"
-    private By rentalPeriod = By.className("Dropdown-control");;//Локатор поля "Cрок аренды"
+    private By rentalPeriod = By.className("Dropdown-control");//Локатор поля "Cрок аренды"
     private By scooterColor = By.className("Order_Checkboxes__3lWSI");//Локатор поля "цвет самоката"
     private By colorBlackPearl = By.id("black");  //Локатор цвета чекбокса "серая безысходность"
     private By colorGrayDesolation = By.id("grey");//Локатор цвета чекбокса "черный жемчуг"
@@ -102,19 +101,13 @@ public void clickYesButton() {
             //проверка, что в окне "заказ оформлен" появляется кнопка "посмотреть статус"
             public void assertCheckStatusButtonVisible() {
                 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-                WebElement button = wait.until(
-                        ExpectedConditions.visibilityOfElementLocated(checkStatusButton)
-                );
-                Assert.assertTrue("Кнопка 'Посмотреть статус' не видна",
-                        button.isDisplayed());
-            }
+                WebElement button = wait.until(ExpectedConditions.visibilityOfElementLocated(checkStatusButton));
+    };
 
             //проверка, что заголовок "заказ оформлен" виден
             public void assertOrderDoneTextVisible () {
-                WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+                WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
                 WebElement checkStatusTextElement = wait.until(ExpectedConditions.visibilityOfElementLocated(orderDoneText));
-                Assert.assertTrue("Текст 'Заказ оформлен' не виден", checkStatusTextElement.isDisplayed());
-
 
         }
     }

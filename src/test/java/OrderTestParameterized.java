@@ -57,8 +57,7 @@ import java.awt.*;
 
         @Before
         public void setUp() {
-            driver = new ChromeDriver(); // не проходит тест
-            driver = new FirefoxDriver(); //тест проходит только в firefox
+            driver = new ChromeDriver(); // не проходит тест в гугл хром
             mainPage=new MainPage(driver);
             OrderPage = new OrderPage(driver);
             AboutRentPage= new AboutRentPage(driver);
@@ -81,9 +80,9 @@ import java.awt.*;
             );
             AboutRentPage.clickOrderButton();
             AboutRentPage.clickYesButton();
-            AboutRentPage.assertCheckStatusButtonVisible();
-            AboutRentPage.assertCheckStatusButtonVisible();
             AboutRentPage.assertOrderDoneTextVisible();
+            AboutRentPage.assertCheckStatusButtonVisible();
+
         }
         @After
         public void tearDown(){
