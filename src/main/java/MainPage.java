@@ -17,7 +17,7 @@ public class MainPage {
         this.driver = driver;
     }
 
-    private By logoYandex = By.xpath("//a[@class='Header_LogoYandex_3TS01']"); //локатор логотипа самоката
+    private By logoYandex = By.xpath("//img[@alt='Scooter']"); //локатор логотипа самоката
     public void clickLogoYandex() {
         driver.findElement(logoYandex).click();
     } //клик на логотип

@@ -24,10 +24,10 @@ public class ScooterLogoTest {
         driver.manage().window().maximize(); //полноэкранный режим
         mainPage.clickButtonCookie(); // клик на кнопку куки
     }
-    //Ожидаемый и Фактический результат не совпадает. Тест не пройден
+
     @Test
-    public void testSecondOrderButton(){
-        mainPage.scrollAndClickOrderDownButton(); //клик на логотип
+    public void testLogoYandex(){
+        mainPage.clickLogoYandex(); //клик на логотип
         String expectedUrl ="https://qa-scooter.praktikum-services.ru/";
         String actualUrl=driver.getCurrentUrl();
         Assert.assertEquals(expectedUrl, actualUrl);//проверка, что текущий url соответствует ожидаемому
